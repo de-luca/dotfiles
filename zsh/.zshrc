@@ -1,13 +1,15 @@
-# export MANPATH="/usr/local/man:$MANPATH"
+source /usr/local/share/antigen/antigen.zsh
 
-# Path to your dotfiles
+# Path to dotfiles
 export DOTFILES=$HOME/.dotfiles
+
+# Custom 
+export ZSH_CUSTOM=$DOTFILES/zsh/custom
+
+antigen init $HOME/.antigenrc
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-
-# Custom 
-ZSH_CUSTOM=$DOTFILES/zsh/custom
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
