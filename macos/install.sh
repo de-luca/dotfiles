@@ -91,7 +91,7 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 # iTerm 2                                                                     #
 ###############################################################################
 # Install the Solarized Dark theme for iTerm
-open $HOME/.dot/iterm/monokai_soda.itermcolors
+open $HOME/.dotfiles/iterm/monokai_soda.itermcolors
 
 ###############################################################################
 # Photos                                                                      #
