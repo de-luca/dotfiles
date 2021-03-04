@@ -1,0 +1,16 @@
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+    git
+    docker
+    docker-compose
+    ripgrep
+    z
+    
+    zsh-users/fast-syntax-highlighting
+    zsh-users/history-substring-search
+EOBUNDLES
+
+antigen theme de-luca/Trinity
+
+antigen apply
