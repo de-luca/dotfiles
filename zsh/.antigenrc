@@ -5,10 +5,10 @@ antigen bundles <<EOBUNDLES
     docker
     docker-compose
     ripgrep
-    z
     
-    zsh-users/fast-syntax-highlighting
-    zsh-users/history-substring-search
+    agkozak/zsh-z
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-history-substring-search
 EOBUNDLES
 
 antigen theme de-luca/Trinity
