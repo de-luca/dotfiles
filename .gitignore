@@ -1,0 +1,4 @@
+/brew/**
+!/brew/Base.Brewfile
+!/brew/install.sh
+!/brew/README.md

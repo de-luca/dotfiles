@@ -1,12 +1,17 @@
+# Generic list of usefull stuff
+
+# Taps
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "lukakerr/things"
+
+# Formulae
+brew "ansible"
 brew "antigen"
 brew "bat"
-brew "ctop"
-brew "deno"
 brew "exa"
 brew "fd"
 brew "fzf"
@@ -14,26 +19,28 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "gnupg"
-brew "htop"
 brew "jq"
 brew "mas"
 brew "neovim"
 brew "ripgrep"
 brew "terraform"
-cask "blockblock"
+
+# Casks
 cask "docker"
 cask "firefox-developer-edition"
-cask "google-chrome"
 cask "iterm2"
-cask "keepassxc"
-cask "meetingbar"
-cask "microsoft-teams"
 cask "netnewswire"
 cask "numi"
-cask "oversight"
-cask "pine"
-cask "phpstorm"
 cask "rectangle"
 cask "visual-studio-code"
-mas "Amphetamine", id: 937984704
-mas "The Unarchiver", id: 425424353
+
+# Objective-See
+cask "blockblock"
+cask "knockknock"
+cask "lulu"
+cask "netiquette"
+cask "oversight"
+cask "reikey"
+
+# Fonts
+cask "font-fira-code"
