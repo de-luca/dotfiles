@@ -1,11 +1,4 @@
 source /usr/local/share/antigen/antigen.zsh
-
-# Path to dotfiles
-export DOTFILES=$HOME/.dotfiles
-
-# Custom 
-export ZSH_CUSTOM=$DOTFILES/zsh/custom
-
 antigen init $HOME/.antigenrc
 
 # You may need to manually set your language environment

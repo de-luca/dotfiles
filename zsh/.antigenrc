@@ -9,6 +9,8 @@ antigen bundles <<EOBUNDLES
     agkozak/zsh-z
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-history-substring-search
+
+    $HOME/.dotfiles/zsh/custom
 EOBUNDLES
 
 antigen theme de-luca/Trinity
