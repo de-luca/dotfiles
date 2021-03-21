@@ -12,6 +12,3 @@ alias fig="docker-compose"
 alias run="docker-compose run --rm"
 alias up="docker-compose up -d"
 alias upp="docker-compose up -d --force-recreate"
-
-alias gflr="git fetch origin && git rebase --autostash origin/develop"
-
