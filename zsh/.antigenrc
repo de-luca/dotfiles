@@ -5,14 +5,18 @@ antigen bundles <<EOBUNDLES
     docker
     docker-compose
     ripgrep
+
+    $HOME/.dotfiles/zsh/custom
     
     agkozak/zsh-z
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-history-substring-search
-
-    $HOME/.dotfiles/zsh/custom
 EOBUNDLES
 
 antigen theme de-luca/Trinity
 
 antigen apply
+
+bindkey '\eOA' history-substring-search-up
+bindkey '\eOB' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
