@@ -8,6 +8,10 @@ if [ "$(command -v exa)" ]; then
     alias ll='exa -l --color auto -a -s type'
 fi
 
+if [ "$(command -v bat)" ]; then
+    alias cat='bat'
+fi
+
 alias fig="docker-compose"
 alias run="docker-compose run --rm"
 alias up="docker-compose up -d"

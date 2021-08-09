@@ -19,3 +19,5 @@ fi
 
 # GPG stuff
 export GPG_TTY=$(tty)
+
+eval "$(zoxide init zsh)"

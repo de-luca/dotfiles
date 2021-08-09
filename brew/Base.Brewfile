@@ -24,6 +24,7 @@ brew "mas"
 brew "neovim"
 brew "ripgrep"
 brew "terraform"
+brew "zoxide"
 
 # Casks
 cask "docker"
