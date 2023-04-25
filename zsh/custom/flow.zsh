@@ -16,15 +16,27 @@ function _flow_rebase() {
 function _flow_draft() {
 	git fetch origin --quiet
 	
-	local last_tag=$(git describe --tags --abbrev=0 origin/master)
+    if (( ${+2} )); then
+        local last_tag=$(git describe --tags --abbrev=0 origin/master --match "$2-*")
+    else 
+        local last_tag=$(git describe --tags --abbrev=0 origin/master)
+    fi
 
-	echo "###########################################"
-	echo "# Last tag: $last_tag"
-	echo "###########################################"
+    local last_version
+    local prefix
 
-	local last_major=$(echo $last_tag | cut -d '.' -f 1)
-	local last_minor=$(echo $last_tag | cut -d '.' -f 2)
-	local last_patch=$(echo $last_tag | cut -d '.' -f 3)
+    [[ $last_tag =~ '([a-zA-Z\-]*)([0-9]+\.[0-9]+\.[0-9]+)' ]] \
+        && prefix=$match[1] \
+        && last_version=$match[2]
+
+	echo "################################################"
+	echo "#       Last tag: $last_tag"
+	echo "#   Last version: $last_version"
+	echo "################################################"
+
+	local last_major=$(echo $last_version | cut -d '.' -f 1)
+	local last_minor=$(echo $last_version | cut -d '.' -f 2)
+	local last_patch=$(echo $last_version | cut -d '.' -f 3)
 
     last_major=${last_major:-0}
     last_minor=${last_minor:-0}
@@ -36,18 +48,18 @@ function _flow_draft() {
 
 	if [[ "$1" == "hotfix" ]] then
 		upstream="master"
-		new_tag="$last_major.$last_minor.$(( $last_patch + 1 ))"
+		new_tag="$prefix$last_major.$last_minor.$(( $last_patch + 1 ))"
 	else
 		upstream="develop"
-		new_tag="$last_major.$(( $last_minor + 1 )).0"
+		new_tag="$prefix$last_major.$(( $last_minor + 1 )).0"
 	fi
 
     new_branch="$1/$new_tag"
 
-	echo "# New tag: $new_tag"
-	echo "# Upstream: $upstream"	
+	echo "#        New tag: $new_tag"
+	echo "#       Upstream: $upstream"	
     echo "# Working branch: $new_branch"
-    echo "###########################################"
+    echo "################################################"
 
 	git checkout origin/$upstream -b $new_branch --quiet
 }
@@ -179,6 +191,6 @@ function _flow_test() {
 }
 
 function flow() {
-	"_flow_$1" $2
+	"_flow_$1" ${@:2}
 }
 

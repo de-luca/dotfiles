@@ -6,7 +6,7 @@
 [remote]
 	pushDefault = origin
 [remote "upstream"]
-    fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
+   fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
 [gpg]
 	program = gpg
 [alias]

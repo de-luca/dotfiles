@@ -5,7 +5,7 @@ chsh -s /bin/zsh
 
 # Link .zshrc
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+echo 'source $HOME/.dotfiles/zsh/.zshrc' > $HOME/.zshrc
 
 # Link .antigenrc
 rm -rf $HOME/.antigenrc
