@@ -20,6 +20,12 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
+# Screencapture                                                               #
+###############################################################################
+mkdir "$HOME/Desktop/screenshots"
+defaults write com.apple.screencapture location "$HOME/Desktop/screenshots"
+
+###############################################################################
 # Energy saving                                                               #
 ###############################################################################
 # Restart automatically if the computer freezes
@@ -41,6 +47,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 ###############################################################################
 # Dock                                                                        #
 ###############################################################################
+# Dock orientation: left
+defaults write com.apple.dock orientation left
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 # Set the icon size of Dock items to 36 pixels

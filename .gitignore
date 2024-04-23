@@ -1,4 +1,2 @@
-/brew/**
-!/brew/Base.Brewfile
-!/brew/install.sh
-!/brew/README.md
+/brew/Brewfile
+/brew/Brewfile.lock.json

@@ -5,19 +5,16 @@
 	default = current
 [remote]
 	pushDefault = origin
-[remote "upstream"]
-   fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
 [gpg]
 	program = gpg
 [alias]
 	git = !exec git
 	drop = !git checkout . && git clean -df && git checkout - && git branch -D @{-1}
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	features = side-by-side line-numbers decorations
-	whitespace-error-style = 22 reverse
-[delta "decoration"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
+[diff]
+	external = difft
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
