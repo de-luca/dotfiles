@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	pager = delta
+	excludesfile = ~/.gitignore
 [push]
 	default = current
 [remote]
@@ -17,4 +17,5 @@
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
 [pager]
+	branch = false
 	difftool = true

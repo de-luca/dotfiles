@@ -19,3 +19,6 @@ alias upp="docker-compose up -d --force-recreate"
 
 alias gut="git"
 alias got="git"
+alias gti="git"
+alias gtu="git"
+alias gto="git"

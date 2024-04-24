@@ -1,4 +1,6 @@
-source /usr/local/share/antigen/antigen.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+source $(brew --prefix)/share/antigen/antigen.zsh
 antigen init $HOME/.antigenrc
 
 # You may need to manually set your language environment

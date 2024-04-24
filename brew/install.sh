@@ -8,6 +8,7 @@ BREWFILE=$BREW_DIR/Brewfile
 if test ! $(which brew); then
   echo "Installing brew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 cp $BASE $BREWFILE
@@ -30,5 +31,5 @@ done
 
 echo "Brewfile ready"
 
-# brew update
-# brew bundle --file "$HOME/.dotfiles/brew/Brewfile"
+brew update
+brew bundle --file "$HOME/.dotfiles/brew/Brewfile"

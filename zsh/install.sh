@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Change shell to zsh
-chsh -s /bin/zsh
-
 # Link .zshrc
 rm -rf $HOME/.zshrc
 echo 'source $HOME/.dotfiles/zsh/.zshrc' > $HOME/.zshrc
