@@ -1,4 +1,8 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname -p) == 'arm' ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+fi
 
 source $(brew --prefix)/share/antigen/antigen.zsh
 antigen init $HOME/.antigenrc

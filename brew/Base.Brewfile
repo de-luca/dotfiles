@@ -2,8 +2,6 @@
 
 # Taps
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 
 # Formulae
 brew "ansible"
@@ -26,8 +24,9 @@ brew "zoxide"
 
 # Casks
 cask "docker"
-cask "firefox-developer-edition"
+cask "firefox"
 cask "iterm2"
+cask "localsend"
 cask "numi"
 cask "obsidian"
 cask "rectangle"

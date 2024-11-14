@@ -24,7 +24,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ###############################################################################
 # Screencapture                                                               #
 ###############################################################################
-mkdir "$HOME/Desktop/screenshots"
+mkdir -p "$HOME/Desktop/screenshots"
 # Save screenshots to specific dir
 defaults write com.apple.screencapture location "$HOME/Desktop/screenshots"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -35,12 +35,14 @@ defaults write com.apple.screencapture type -string "png"
 ###############################################################################
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on 2> /dev/null
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
 # Disable machine sleep while charging
 sudo pmset -c sleep 0
+# Sleep the display after 15 minutes on AC
+sudo pmset -c displaysleep 15
 # Set machine sleep to 5 minutes on battery
 sudo pmset -b sleep 5
+# Sleep the display after 5 minutes on battery
+sudo pmset -b displaysleep 5
 
 ###############################################################################
 # Screen                                                                      #
@@ -86,7 +88,7 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari AutoOpenSafeDownloads -bool true
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 # Hide Safari’s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 # Enable the Develop menu and the Web Inspector in Safari
